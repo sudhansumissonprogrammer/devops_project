@@ -15,22 +15,6 @@ Define all required infrastructure using Terraform:
  Use Terratest to write infrastructure tests and validate the Terraform modules.
 Apply Terraform to create the pipeline and confirm successful setup.
 
-#### Task 2: DevSecOps Integration using GitHub Actions and Sealed Secrets
-Use GitHub Actions to automate the CI/CD workflow.
-Integrate security scanning into the workflow using:
-• `tfsec` for Terraform code
-• `Trivy` for Docker image scanning
-• Use Sealed Secrets to manage Kubernetes secrets securely before deploying workloads.
-• Store secrets in encrypted SealedSecrets format and apply them to the Kubernetes cluster
-as part of the deployment pipeline.
-Ensure GitHub Actions workflow:
-• Executes on each code push
-• Runs security scans
-• Applies SealedSecrets
-• Triggers deployment to Kubernetes or updates infrastructure via Terraform
-
-
----
 
 
 # 🚀 AWS CodePipeline with Terraform (CI/CD) | DevSecOps Project
@@ -188,46 +172,7 @@ terraform destroy -auto-approve
 
 ---
 
----
-## 📌Task 2: DevSecOps Integration using GitHub Actions and Sealed Secrets
 
-# 🔐 DevSecOps Integration using GitHub Actions & Sealed Secrets
-
-This part of the project integrates **DevSecOps practices** into the CI/CD workflow using **GitHub Actions**, focusing on security, automation, and secret management for Kubernetes deployments.
-
----
-
-
-| Feature                     | Tool/Tech Used              |
-|----------------------------|-----------------------------|
-| CI/CD Workflow             | GitHub Actions              |
-| Terraform Security Scanning| `tfsec`                     |
-| Docker Image Scanning      | `Trivy`                     |
-| Secrets Management         | Sealed Secrets (kubeseal)   |
-| Kubernetes Deployment      | kubectl + GitHub Actions    |
-| IaC Deployment             | Terraform via CI/CD         |
-
----
----
-```markdown
-### 📂 Project Structure
-
-DevSecOps-Masters-Project/
-├── .github/workflows/
-│   └── devsecops-pipeline.yml       # GitHub Actions CI/CD
-├── terraform/                       # Terraform IaC
-├── docker/
-│   └── Dockerfile                   # Containerized app
-├── k8s/
-│   ├── manifests/                   # Kubernetes YAMLs
-│   │   └── deployment.yaml
-│   └── secrets/
-│       ├── db-creds.yaml            # Encrypted SealedSecret
-│       └── sealed-secret.yaml
-└── README.md
-````
-
----
 
 ## ⚙️ GitHub Actions CI/CD Pipeline
 
@@ -392,17 +337,3 @@ DevSecOps-Masters-Project/
 | **5. Sealed Secrets**    | Decrypt and apply Kubernetes secrets securely       |
 | **6. Docker Build**      | Build and push image to Docker Hub                  |
 | **7. Kubernetes Deploy** | Apply manifests to deploy app on cluster            |
-
-
-## 🙋‍♂️ Author
-
-**Ayush Dash**
-
-* 🔗 [LinkedIn](https://www.linkedin.com/in/ayush-dash-214249253)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
