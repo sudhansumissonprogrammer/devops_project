@@ -2,7 +2,7 @@
 
 AWS Cloud Assignment: CodePipeline using Terraform & DevSecOps with GitHub Actions and
 Kubernetes Sealed Secrets
-#### Task 1: CodePipeline using Terraform
+#### Task : CodePipeline using Terraform
 Use Terraform to provision an AWS CodePipeline.
 The pipeline must include:
 • Source stage connected to GitHub or CodeCommit
